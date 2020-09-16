@@ -1,0 +1,1023 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.cta {
+  display: none;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+body {
+  background-color: #dbe4eb;
+}
+
+.container {
+  background-color: #0e2839;
+  background: url("images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 550px;
+  margin: auto;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.navcontainer {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+.logo {
+  margin: 3vh;
+  height: 70%;
+  border-radius: 100px;
+  transition: box-shadow 300ms ease-in-out, margin ease-in-out 300ms;
+}
+
+.logo:hover {
+  cursor: pointer;
+  box-shadow: 0 0 50px #8570e2;
+}
+
+.navbutton {
+  width: min-content;
+  justify-self: end;
+  margin-right: 30px;
+}
+
+.navbutton__element,
+.navbutton__element::before,
+.navbutton__element::after {
+  width: 30px;
+  height: 5px;
+  background: #4b36d0;
+  position: relative;
+  z-index: 2;
+  transition: transform ease-in-out 300ms;
+}
+
+.navbutton__element::before,
+.navbutton__element::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+}
+.navbutton__element::after {
+  top: 10px;
+}
+
+.navbutton__element--close {
+  transform: rotate(45deg);
+}
+
+.navbutton__element--close::before {
+  transform: rotate(-90deg) translateX(-10px);
+}
+
+.navbutton__element--close::after {
+  transform: rotate(-45deg) translateX(100vw);
+}
+
+.navlist {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: -200vw;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  transition: all ease-in-out 400ms;
+}
+.show--navlist {
+  transform: translateX(-200vw);
+}
+
+.nav__link {
+  font-weight: 400;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0;
+  transition: all ease-in-out 200ms;
+}
+
+.nav__link + .nav__link {
+  margin-top: 10vh;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+/*--------------------------------------------------
+------------------------HOME------------------------
+--------------------------------------------------*/
+
+.home {
+  max-height: 100vh;
+  transition: opacity ease-in-out 500ms;
+}
+
+.main {
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #4b36d0;
+  font-size: min(15vh, 20vw);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 15vh;
+  font-weight: 700;
+  position: relative;
+  animation: 800ms ease-out 0s animateTitle;
+}
+
+.subtitle {
+  color: #205786;
+  font-size: min(5vh, 7vw);
+  width: 500%;
+  padding: 0.3em 0;
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  animation: 1200ms ease-out 0s animateSubTitle;
+}
+
+/*-----------------------------------------------------
+----------------- Mindfullness------------------------
+----------------------------------------------*/
+
+.mindfulness {
+  transition: opacity ease-in-out 500ms;
+}
+
+.mindfulness .title,
+.contact__me__main .title,
+.main--chakras .title,
+.contact__me .title {
+  font-size: min(15vh, 15vw);
+  margin-bottom: 5vh;
+}
+
+.main--chakras .title {
+  margin-bottom: 0;
+}
+
+.quote {
+  font-size: min(3vh, 5vw);
+  font-weight: 700;
+  font-style: italic;
+  color: #205786;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+.mindfulness__logo img {
+  display: none;
+}
+
+.mindfulness__logo {
+  width: 500%;
+  text-align: center;
+  margin-bottom: min(2.5vh, 5vw);
+}
+
+.mindfulness__logos {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: min(4rem, 10vh);
+  width: 100%;
+}
+
+.icon__subtitle {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #632181;
+  font-size: min(6.5vh, 8vw);
+  font-weight: 700;
+  padding: 1vh;
+  width: 100%;
+  text-align: center;
+  animation: 1200ms ease-out 0s animateSubTitle;
+}
+
+/*--------------------------------------------------
+----------------------CHAKRAS----------------------
+-----------------------------------------------*/
+
+.chakras__nav {
+  display: none;
+}
+
+.chakras {
+  transition: opacity ease-in-out 500ms;
+}
+
+.main--chakras {
+  flex-direction: column;
+}
+
+.meditation__container {
+  flex-direction: column-reverse;
+  background-image: url("images/yoga-cut-1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  overflow: hidden;
+  height: min(60vh, 100vw);
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 2.5vh;
+}
+
+.meditation__container img {
+  height: 14%;
+  transition: height ease-in-out 350ms;
+  border-radius: 100px;
+}
+
+.meditation__container img:hover {
+  height: 15%;
+  cursor: pointer;
+}
+
+.chakra--right {
+  -webkit-animation: rotate-right 4000ms infinite linear;
+  -moz-animation: rotate-right 4000ms infinite linear;
+  -o-animation: rotate-right 4000ms infinite linear;
+  animation: rotate-right 4000ms infinite linear -2800ms,
+    1200ms linear 0s animateChakraRight;
+}
+
+.chakra--left {
+  -webkit-animation: rotate-left 4000ms infinite linear;
+  -moz-animation: rotate-left 4000ms infinite linear;
+  -o-animation: rotate-left 4000ms infinite linear;
+  animation: rotate-left 4000ms infinite linear -2800ms,
+    1200ms linear 0s animateChakraLeft;
+}
+
+.chakra--crown {
+  animation: 1200ms ease-out 0s animate__crown;
+}
+
+/*-----------------------------------------------
+-----------------CHAKRA INFO---------------------
+-----------------------------------------------*/
+
+.chakra__main {
+  flex-direction: column;
+  margin: auto;
+  transition: opacity ease-in-out 500ms;
+}
+
+.chakra__info {
+  transition: opacity ease-in-out 500ms;
+}
+
+.chakra__back {
+  object-fit: contain;
+  height: 100%;
+}
+
+.chakra__back:hover {
+  cursor: pointer;
+}
+
+.content {
+  flex-direction: column;
+}
+
+.content__left {
+  flex-direction: column;
+  margin: 0 auto 1em;
+  height: 20vh;
+  max-height: 20vw;
+}
+
+.title--chakra1,
+.title--chakra2,
+.title--chakra3,
+.title--chakra4,
+.title--chakra5,
+.title--chakra6,
+.title--chakra7 {
+  margin: 0;
+  font-size: min(4rem, 10vw);
+  color: #ce171f;
+}
+
+.title--chakra2 {
+  color: #f29503;
+}
+
+.title--chakra3 {
+  color: #ccb804;
+}
+
+.title--chakra4 {
+  color: #1bad39;
+}
+
+.title--chakra5 {
+  color: #42a2f3;
+}
+
+.title--chakra6 {
+  color: #9519cd;
+}
+
+.title--chakra7 {
+  color: #a154a0;
+}
+
+.content__right {
+  width: 60%;
+  margin: auto;
+  color: #4b36d0;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: min(2.5vh, 4vw);
+  font-weight: 700;
+}
+
+.info__parr {
+  width: 80%;
+  margin: 1em auto;
+}
+
+/*----------------------------------------------------------
+-----------------Contact Me --------------------------------
+-------------------------------------------------------*/
+
+.contact__me {
+  flex-direction: column;
+  transition: opacity ease-in-out 500ms;
+}
+
+.contact {
+  flex-direction: column;
+  margin-top: 5vh;
+}
+
+.contact__icon {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5vh;
+  padding: 1vh;
+  color: #205786;
+  justify-content: space-around;
+}
+
+.contact__icon img {
+  height: min(10vh, 10vw);
+  animation: 1200ms ease-out 0s animateSubTitle;
+}
+.contact__icon p {
+  font-size: min(2.5vh, 4vw);
+  width: 60%;
+  animation: 1200ms ease-out 0s animateSubTitle;
+}
+
+@keyframes animateTitle {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@-webkit-keyframes animateTitle {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@-moz-keyframes animateTitle {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@-o-keyframes animateTitle {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@keyframes animateSubTitle {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@-webkit-keyframes animateSubTitle {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@-moz-keyframes animateSubTitle {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@-o-keyframes animateSubTitle {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+    left: 0;
+  }
+}
+
+@-webkit-keyframes rotate-right {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate-right {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes rotate-right {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-right {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-left {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@-moz-keyframes rotate-left {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@-o-keyframes rotate-left {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-left {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes animateChakraRight {
+  0% {
+    transform: rotate(-360deg) scale(0);
+  }
+
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@-webkit-keyframes animateChakraRight {
+  0% {
+    transform: rotate(-360deg) scale(0);
+  }
+
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@-moz-keyframes animateChakraRight {
+  0% {
+    transform: rotate(-360deg) scale(0);
+  }
+
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@-o-keyframes animateChakraRight {
+  0% {
+    transform: rotate(-360deg) scale(0);
+  }
+
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes animateChakraLeft {
+  0% {
+    transform: rotate(360deg) scale(0);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@-webkit-keyframes animateChakraLeft {
+  0% {
+    transform: rotate(360deg) scale(0);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@-moz-keyframes animateChakraLeft {
+  0% {
+    transform: rotate(360deg) scale(0);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@-o-keyframes animateChakraLeft {
+  0% {
+    transform: rotate(360deg) scale(0);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes animate__crown {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes animate__crown {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes animate__crown {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-o-keyframes animate__crown {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 1800px;
+  }
+
+  .navcontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  .logo {
+    width: auto;
+    height: auto;
+    max-width: 35%;
+    max-height: 10%;
+    position: relative;
+    z-index: 2;
+    align-self: flex-start;
+    margin: 10vh auto 0;
+  }
+
+  .moved__logo {
+    margin: 3vh auto;
+  }
+  .navlist {
+    right: unset;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .navbutton {
+    display: none;
+  }
+
+  .nav__link {
+    font-size: min(2rem, 2vw);
+  }
+
+  #home__link {
+    display: none;
+  }
+
+  .home .main {
+    width: 85%;
+    margin-left: auto;
+    margin-top: 5%;
+    height: 95vh;
+  }
+
+  .title {
+    font-size: min(10rem, 7vw);
+    width: 70%;
+    text-align: left;
+  }
+
+  .chakra__main .title {
+    width: auto;
+    text-align: center;
+  }
+
+  .chakra__main {
+    width: 75%;
+    margin: 5vh 15% 0 0;
+    align-self: flex-start;
+  }
+
+  .content {
+    flex-direction: row;
+    margin: 5vh auto 0;
+  }
+
+  .content__left {
+    width: 50%;
+    align-items: center;
+    height: auto;
+  }
+
+  .content__right {
+    min-height: 50vh;
+    font-size: min(2.6vw, 4vh);
+  }
+
+  .chakra__back:hover {
+    cursor: auto;
+  }
+
+  .content__right--small {
+    font-size: min(1.6vw, 3vh);
+  }
+
+  .subtitle {
+    font-size: min(5rem, 3.5vw);
+  }
+
+  .mindfulness .title,
+  .contact__me__main .title,
+  .main--chakras .title,
+  .contact__me .title {
+    width: 100%;
+    text-align: center;
+    margin-top: 5vh;
+  }
+
+  .home__container {
+    position: absolute;
+    right: 5vw;
+    top: 3vh;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: background 300ms ease-in-out, opacity 600ms ease-in-out;
+  }
+
+  .home__container:hover,
+  .home__container:focus {
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+  }
+  .homebtn {
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .mindfulness__logos {
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mindfulness__logo {
+    width: 30%;
+  }
+
+  .mindfulness__logo:hover img,
+  .mindfulness__logo:hover .icon__subtitle {
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+  }
+
+  .mindfulness__logo img {
+    display: unset;
+    border-radius: 500px;
+    transition: background 300ms ease-in-out;
+    max-width: 15vw;
+    margin-bottom: 2vh;
+  }
+
+  .icon__subtitle {
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background 300ms ease-in-out;
+    font-size: min(3rem, 3vw);
+  }
+
+  .quote {
+    font-size: min(2vw, 2rem);
+    width: 60%;
+    margin-bottom: 7vh;
+  }
+
+  .meditation__container {
+    height: min(70vh, 120vw);
+  }
+
+  .chakras__nav {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 65%;
+    justify-content: center;
+    width: 15%;
+    z-index: 1;
+    padding-left: 0.8%;
+  }
+
+  .chakra__info {
+    height: 100vh;
+    align-items: center;
+  }
+
+  .chakras__nav__el {
+    max-height: 14%;
+    object-fit: contain;
+    margin: auto;
+    border-radius: 100px;
+    transition: background 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  }
+
+  .chakras__nav__el:hover,
+  .chakras__nav__el:focus {
+    cursor: pointer;
+  }
+
+  .btn__chakra1-nav:hover,
+  .btn__chakra1-nav:focus,
+  .btn__chakra1:hover,
+  .btn__chakra1:focus {
+    box-shadow: 0 0 50px #ce171f;
+    background: rgba(206, 23, 31, 0.3);
+  }
+  .btn__chakra2-nav:hover,
+  .btn__chakra2-nav:focus,
+  .btn__chakra2:hover,
+  .btn__chakra2:focus {
+    box-shadow: 0 0 50px rgba(242, 149, 3, 1);
+    background: rgba(242, 149, 3, 0.3);
+  }
+  .btn__chakra3-nav:hover,
+  .btn__chakra3-nav:focus,
+  .btn__chakra3:hover,
+  .btn__chakra3:focus {
+    box-shadow: 0 0 50px rgba(204, 184, 4, 1);
+    background: rgba(204, 184, 4, 0.3);
+  }
+  .btn__chakra4-nav:hover,
+  .btn__chakra4-nav:focus,
+  .btn__chakra4:hover,
+  .btn__chakra4:focus {
+    box-shadow: 0 0 50px rgba(0, 134, 65, 1);
+    background: rgba(0, 134, 65, 0.3);
+  }
+  .btn__chakra5-nav:hover,
+  .btn__chakra5-nav:focus,
+  .btn__chakra5:hover,
+  .btn__chakra5:focus {
+    box-shadow: 0 0 50px rgba(66, 162, 243, 1);
+    background: rgba(66, 162, 243, 0.3);
+  }
+  .btn__chakra6-nav:hover,
+  .btn__chakra6-nav:focus,
+  .btn__chakra6:hover,
+  .btn__chakra6:focus {
+    box-shadow: 0 0 50px rgba(146, 25, 205, 1);
+    background: rgba(146, 25, 205, 0.3);
+  }
+  .btn__chakra7-nav:hover,
+  .btn__chakra7-nav:focus,
+  .btn__chakra7:hover,
+  .btn__chakra7:focus {
+    box-shadow: 0 0 50px rgba(161, 84, 160, 1);
+    background: rgba(161, 84, 160, 0.3);
+  }
+
+  .cta {
+    width: fit-content;
+    padding: min(2vw, 4vh);
+    background: transparent;
+    color: #fff;
+    border-radius: 86px;
+    font-size: min(2.2vw, 4vh);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+  }
+
+  .cta--txt {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-transform: uppercase;
+  }
+
+  .cta:hover,
+  .cta:focus {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta:hover:before {
+    width: 100%;
+  }
+
+  .cta::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 86px;
+    position: absolute;
+    background: #205786;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #4286f4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: width 300ms ease-in-out;
+  }
+
+  /*----------------------------------------------------------------
+------------------contact-------------------------------------------
+---------------------------------------*/
+
+  .contact {
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.7);
+    align-items: center;
+  }
+
+  .contact__icon {
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent;
+    align-items: center;
+    padding: 4vh 2vw;
+    margin: 0;
+  }
+
+  .contact__icon img {
+    margin-bottom: 3vh;
+  }
+
+  .contact__icon p {
+    width: auto;
+    font-size: min(2.5vh, 2.5vw);
+  }
+}
